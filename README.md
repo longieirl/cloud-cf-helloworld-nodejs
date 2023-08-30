@@ -1,6 +1,9 @@
-# Build and Deploy a Fiori UI 
+# Build and Deploy a Fiori UI using Project Piper image
 
-Update `.env` file with credentials
+
+Ensure all [pre-reqs](https://ga.support.sap.com/dtp/viewer/index.html#/tree/3046/actions/45995:45996:50742:46000) are met.
+
+Update `.env` file with ABAP repository credentials
 
 Create image
 ```
@@ -31,7 +34,7 @@ Run deployment using the `ui5-deploy.yaml` configuration
 ```
 npm run deploy
 ```
-If you want to apply verbose loggging, then update update `ui5-deploy.yaml` as follows;
+If you want to apply verbose loggging, then update `ui5-deploy.yaml` as follows;
 
 ```YAML
   customTasks:
@@ -51,7 +54,7 @@ If you want to apply verbose loggging, then update update `ui5-deploy.yaml` as f
           - /test/
 ```          
 
-or by change package.json;
+or by change `package.json` as follows;
 
 ```JSON
 "deploy": "npm run build && fiori deploy --config ui5-deploy.yaml --verbose && rimraf archive.zip",
